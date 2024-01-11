@@ -52,7 +52,7 @@ const productsSum = computed(() => store.getters.allProductsSelectedSum);
     gap: 12px;
     display: flex;
     flex-direction: column;
-    max-height: 24rem;
+    max-height: 30rem;
 
     &__products-list {
       max-height: 100%;
