@@ -4,38 +4,39 @@ import { DividerEnum } from './enum/divider.enum';
 
 import CheckoutDetails from './components/CheckoutDetails.vue';
 import StepByStep from './components/StepByStep.vue';
-import { ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import type { IStep } from './interface/step.interface';
 import StepOne from './components/steps/StepOne.vue';
 import StepTwo from './components/steps/StepTwo.vue'
 import StepThree from './components/steps/StepThree.vue'
+import type { IProduct } from './interface/product.interface';
+import { useStore } from 'vuex';
 
+const store = useStore();
 const currentStep = ref(1);
+const products = computed(() => store.getters.allProducts);
+const steps = computed(() => store.getters.allSteps);
 
 const updateStep = (step: IStep) => {
     currentStep.value = step.number;
 }
 
-const steps: Array<IStep> = [
-	{key:1, number: 1},
-	{key:2, number: 2},
-	{key:3, number: 3}
-]
 
 </script>
 
 <template>
   <div class="app">
     <div class="app__container">
-      <CheckoutDetails :currentStep="currentStep" />
+      <CheckoutDetails :products="products" :currentStep="currentStep" />
       <StepByStep
 	  	:steps="steps"
 	  	:currentStep="currentStep"
 		@step-changed="updateStep" />
 
+	
 	  <Divider :direction="DividerEnum.VERTICAL"/>
 
-	  <div class="app__routes">
+	  <div class="app__step-content">
 
 		<div v-if="currentStep === 1">
 			<StepOne @step-changed="updateStep" />
@@ -65,12 +66,17 @@ const steps: Array<IStep> = [
 		width: 60vw;
 		min-width: 60vw;
 		max-width: 60vw;
+
+		&--divider {
+
+		}
 	}
 
-	&__routes {
+	&__step-content {
 		background-color: #f5f5f5;
 		padding: 2rem;
 		width: 50%;
+		border-radius: 0px 8px 8px 0px
 	}
 }
 </style>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { IStep } from '../interface/step.interface'
+import { type IStep } from '../interface/step.interface'
 
 defineProps<{
   currentStep: number,
@@ -28,6 +28,7 @@ defineProps<{
   padding: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 2rem;
   &__step {
     padding: 20px;

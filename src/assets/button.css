@@ -1,0 +1,24 @@
+/* primary */
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #ED7A7A;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+}
+  
+button[type="submit"]:hover {
+    opacity: .8;
+}
+
+button[type="submit"]:focus-visible {
+    outline: 0px;
+}
+  
+  /* secondary */
+button[type="button"] {
+    width: 100%;
+}
