@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import Title from '@/components/Title.vue'
-import { RouterLink } from 'vue-router'
 import { useSteps } from '@/composables/useSteps'
 import PaymentMethod from '@/components/PaymentMethod.vue'
 

@@ -4,12 +4,12 @@ import Divider from './Divider.vue'
 import { DividerEnum } from '../enum/divider.enum'
 import { type IProduct } from '../interface/product.interface'
 
-import DetailValue from './DetailValue.vue';
-import Product from './Product.vue';
-import { useStore } from 'vuex';
+import DetailValue from './DetailValue.vue'
+import Product from './Product.vue'
+import { useStore } from 'vuex'
 
 
-import { computed } from 'vue';
+import { computed } from 'vue'
 
 defineProps<{
   currentStep: number,
@@ -17,7 +17,7 @@ defineProps<{
   }>()
   
 const store = useStore();
-const productsSum = computed(() => store.getters.allProductsSelectedSum);
+const productsSum = computed(() => store.getters.allProductsSelectedSum)
 
 </script>
 
@@ -75,8 +75,6 @@ const productsSum = computed(() => store.getters.allProductsSelectedSum);
       padding: 0 1rem;
       text-align: center;
     }
-
-    &__content {}
   }
 </style>
   

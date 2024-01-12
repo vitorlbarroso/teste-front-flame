@@ -15,7 +15,7 @@ export function useSteps(){
     }
 
     const goToSuccess = () => {
-        push({ name: 'success' })
+        updateStep({ number: 3 }, false, 'success');
     }
 
     const redirectToNextStep = (payment: IPaymentMethod) => {

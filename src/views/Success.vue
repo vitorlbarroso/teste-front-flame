@@ -18,9 +18,9 @@ const { userLoggedin } = useUser()
     }
 
     &__description {
-        h4 {
-            text-align: center;
-        }
+            h4 {
+                text-align: center;
+            }
     }
 }
 </style>
@@ -30,7 +30,7 @@ const { userLoggedin } = useUser()
         
         <section class="success__description">
             <h4>Olá, {{userLoggedin.name}} obrigado por comprar!</h4>
-            <h4>O QR CODE abaixo de dá 5% de desconto no site!</h4> 
+            <h4>O QR CODE abaixo de dá 5% de desconto no site na sua próxima compra!</h4> 
         </section>
 
         <figure class="success__qrcode">

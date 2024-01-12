@@ -29,7 +29,7 @@ const valueFormatted = computed(() => formatMoney(props.product.price));
     &__content {
         background-color: #D9D9D9;
         width: 100%;
-        height: 100px;
+        height: auto;
         display: flex;        
         justify-content: space-between;
         padding: 10px;

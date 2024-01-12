@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useFormatMoney } from '../composables/useFormatMoney';
+import { useFormatMoney } from '../composables/useFormatMoney'
 
-const { formatMoney } = useFormatMoney();
+const { formatMoney } = useFormatMoney()
 
 const props = defineProps<{
   label: string,
@@ -10,7 +10,7 @@ const props = defineProps<{
 }>()
 
 
-const valueFormatted = computed(() => formatMoney(props.value));
+const valueFormatted = computed(() => formatMoney(props.value))
 </script>
 
 <style scoped lang="scss">
