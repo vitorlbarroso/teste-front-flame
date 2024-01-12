@@ -10,5 +10,6 @@ export interface State {
     step: number
     paymentsMethod: Array<IPaymentMethod>
     paymentMethodSelected: IPaymentMethod | null
-    userLoggedin: IUser
+    userLoggedin: IUser,
+    ticketNumber: string
 }

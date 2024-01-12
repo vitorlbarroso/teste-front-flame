@@ -1,8 +1,11 @@
 <script setup lang="ts">
-import { useUser } from '@/composables/useUser'
-import Title from '../components/Title.vue'
+import Title from '@/components/Title.vue'
+import { useStorage } from '@/composables/useStorage'
 
-const { userLoggedin } = useUser()
+const { get, deletee } = useStorage()
+
+const name = get<string>('@Flame:NAME')
+deletee()
 </script>
 <style scoped lang="scss">
 .success {
@@ -29,7 +32,7 @@ const { userLoggedin } = useUser()
         <Title text="Obrigado por comprar com a gente!" />
         
         <section class="success__description">
-            <h4>Olá, {{userLoggedin.name}} obrigado por comprar!</h4>
+            <h4>Olá, {{name ? name : 'caro cliente'}} obrigado por comprar!</h4>
             <h4>O QR CODE abaixo de dá 5% de desconto no site na sua próxima compra!</h4> 
         </section>
 

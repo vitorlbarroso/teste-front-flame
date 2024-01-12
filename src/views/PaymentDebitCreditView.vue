@@ -2,7 +2,7 @@
 
 <script setup lang="ts">
 import { usePayments } from '@/composables/usePayments'
-import Title from '../components/Title.vue'
+import Title from '@/components/Title.vue'
 import { Field, ErrorMessage } from 'vee-validate'
 import { useSteps } from '@/composables/useSteps'
 
@@ -64,6 +64,6 @@ const { goToSuccess } = useSteps()
             </div>
         </section>
     
-        <button @click="goToSuccess()" class="primary" :disabled="!isFormComplete">Realizar pagamento</button>
+        <button @click="goToSuccess(formData)" class="primary" :disabled="!isFormComplete">Realizar pagamento</button>
     </div>
 </template>

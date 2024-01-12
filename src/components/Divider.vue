@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DividerEnum } from '../enum/divider.enum'
+import { DividerEnum } from '@/enum/divider.enum'
 
 defineProps<{
   direction: DividerEnum

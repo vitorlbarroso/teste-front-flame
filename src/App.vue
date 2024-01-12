@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import Divider from './components/Divider.vue'
-import { DividerEnum } from './enum/divider.enum'
-import CheckoutDetails from './components/CheckoutDetails.vue'
-import StepByStep from './components/StepByStep.vue'
+import Divider from '@/components/Divider.vue'
+import { DividerEnum } from '@/enum/divider.enum'
+import CheckoutDetails from '@/components/CheckoutDetails.vue'
+import StepByStep from '@/components/StepByStep.vue'
 import { computed } from 'vue'
 import { useStore } from 'vuex'
 import { RouterView } from 'vue-router'
-import { useSteps } from './composables/useSteps'
+import { useSteps } from '@/composables/useSteps'
 
 const store = useStore()
 const currentStep = computed(() => store.getters.actualStep)

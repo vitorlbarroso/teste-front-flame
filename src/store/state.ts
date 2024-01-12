@@ -22,5 +22,6 @@ export const state: State = {
         { text: 'Boleto', value: PaymentMethodEnum.TICKET, isSelected: false }
     ],
     paymentMethodSelected: null,
-    userLoggedin: { name: 'João Vitor' }
+    userLoggedin: { name: 'João Vitor' },
+    ticketNumber: '8949461894984 6515648916 6548964631668'
 }

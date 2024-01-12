@@ -2,7 +2,7 @@
 
 <script setup lang="ts">
 import { usePayments } from '@/composables/usePayments'
-import Title from '../components/Title.vue'
+import Title from '@/components/Title.vue'
 import { Field, ErrorMessage, useForm } from 'vee-validate'
 
 const { handleSubmit } = useForm()

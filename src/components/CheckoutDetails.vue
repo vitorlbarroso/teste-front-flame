@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import Title from './Title.vue'
-import Divider from './Divider.vue'
-import { DividerEnum } from '../enum/divider.enum'
-import { type IProduct } from '../interface/product.interface'
+import Title from '@/components/Title.vue'
+import Divider from '@/components/Divider.vue'
+import { DividerEnum } from '@/enum/divider.enum'
+import { type IProduct } from '@/interface/product.interface'
 
-import DetailValue from './DetailValue.vue'
-import Product from './Product.vue'
+import DetailValue from '@/components/DetailValue.vue'
+import Product from '@/components/Product.vue'
 import { useStore } from 'vuex'
 
 

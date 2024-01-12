@@ -3,6 +3,7 @@ import { useStore } from 'vuex'
 import type { IPaymentMethod } from '@/interface/payment-method.interface'
 import { computed, reactive } from 'vue'
 import { useUtils } from './useUtils'
+import type { ICard } from '@/interface/card.interface'
 
 export function usePayments(){
 	
@@ -11,6 +12,7 @@ export function usePayments(){
     
     const payments = computed(() => store.getters.allPaymentMethod)
     const selectedOption = computed(() => store.getters.paymentMethodSelected.value)
+    const ticketNumber = computed(() => store.getters.getTicketNumber)
 
     const formData = reactive({
         name: '',
@@ -18,7 +20,7 @@ export function usePayments(){
         cpf: '',
         validity: '',
         cvv: '',
-    })
+    } as ICard)
 
     const isFormComplete = computed(() => {
         return !!formData.name &&
@@ -35,5 +37,12 @@ export function usePayments(){
     }
     
 
-	return { selectPaymentMethod, payments, selectedOption, isFormComplete, formData }
+	return {
+        selectPaymentMethod,
+        payments,
+        selectedOption,
+        isFormComplete,
+        formData,
+        ticketNumber
+    }
 }

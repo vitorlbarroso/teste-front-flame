@@ -18,5 +18,6 @@ export const getters: GetterTree<State, State> = {
     actualStep: (state: State): number => state.step,
     allPaymentMethod: (state: State): Array<IPaymentMethod> => state.paymentsMethod,
     paymentMethodSelected: (state: State): IPaymentMethod | undefined => state.paymentsMethod.find(method => method.isSelected),
-    userLoggedin: (state: State): IUser => state.userLoggedin
+    userLoggedin: (state: State): IUser => state.userLoggedin,
+    getTicketNumber: (state: State): string => state.ticketNumber
 }

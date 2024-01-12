@@ -1,3 +1,4 @@
+import type { ICard } from '@/interface/card.interface'
 import type { IProduct } from '@/interface/product.interface'
 
 export const actions = {
@@ -17,6 +18,9 @@ export const actions = {
       commit('SET_STEP', step)
     },
     selectPaymentMethod({ commit }: unknown, product: IProduct) {
+      commit('SELECT_PAYMENT_METHOD', product)
+    },
+    setCardData({ commit }: unknown, product: ICard) {
       commit('SELECT_PAYMENT_METHOD', product)
     },
   }

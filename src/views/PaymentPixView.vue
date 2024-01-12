@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Title from '@/components/Title.vue'
 import Timer from '@/components/Timer.vue'
 import { useSteps } from '@/composables/useSteps'
 
