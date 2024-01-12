@@ -1,3 +1,4 @@
+import { PaymentMethodEnum } from '@/enum/payment-method.enum';
 import type { State } from '@/interface/state.interface';
 
 export const state: State = {
@@ -10,8 +11,16 @@ export const state: State = {
 		{ id: 4, name: 'Camisa do Flamengo', description: 'Camisa oficial Clube de Regatas do Flamengo.' , price: 5000, isSelected: false },
     ],
     steps: [
-        { key:1, number: 1 },
-        { key:2, number: 2 },
-        { key:3, number: 3 }
-    ]
+        { key: 1, number: 1 },
+        { key: 2, number: 2 },
+        { key: 3, number: 3 }
+    ],
+    step: 1,
+    paymentsMethod: [
+        { text: 'PIX', value: PaymentMethodEnum.PIX, isSelected: true },
+        { text: 'Cartão de crédito', value: PaymentMethodEnum.CREDIT_CARD, isSelected: false },
+        { text: 'Boleto', value: PaymentMethodEnum.TICKET, isSelected: false }
+    ],
+    paymentMethodSelected: null,
+    userLoggedin: { name: 'João Vitor' }
 };

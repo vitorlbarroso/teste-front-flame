@@ -4,6 +4,12 @@
 @import './button.css';
 @import './input.css';
 
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 #app {
   /* max-width: 1280px; */
   margin: 0 auto;

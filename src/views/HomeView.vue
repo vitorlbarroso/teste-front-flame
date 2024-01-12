@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import StepOneView from './StepOneView.vue';
 </script>
-
 <template>
-  <main>
-    <TheWelcome />
+  <main class="main">
+    <StepOneView />
   </main>
 </template>

@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { type IStep } from '../interface/step.interface'
+import { type IStep } from '@/interface/step.interface'
+import { useSteps } from '@/composables/useSteps'
+
+const { updateStep } = useSteps()
 
 defineProps<{
   currentStep: number,
@@ -9,14 +12,13 @@ defineProps<{
 
 <template>
     <section class="step-by-step">
-      <div v-for="step in steps" :key="step.key" 
+      <div v-for="step in steps" :key="step.key"
            class="step-by-step__step"
            :class="{
               'step-by-step__step--is-clickable': step.number === 1,
-              'step-by-step__step--active': currentStep === step.number
+              'step-by-step__step--active': currentStep >= step.number,
             }"
-           @click="step.number === 1 ? $emit('step-changed', step) : null">
-        <!-- Você pode adicionar mais detalhes aqui, como ícones ou títulos para cada passo -->
+           @click="step.number === 1 ? updateStep({ number: 1 }) : null">
         {{ step.number }}
       </div>
     </section>

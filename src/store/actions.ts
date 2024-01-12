@@ -13,5 +13,11 @@ export const actions = {
     selectProduct({ commit }: unknown, product: IProduct) {
       commit('SELECT_PRODUCT', product);
     },
+    setStep({ commit }: unknown, step: number) {
+      commit('SET_STEP', step);
+    },
+    selectPaymentMethod({ commit }: unknown, product: IProduct) {
+      commit('SELECT_PAYMENT_METHOD', product);
+    },
   };
   

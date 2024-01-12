@@ -1,26 +1,19 @@
 <script setup lang="ts">
-import Divider from './components/Divider.vue';
-import { DividerEnum } from './enum/divider.enum';
+import Divider from './components/Divider.vue'
+import { DividerEnum } from './enum/divider.enum'
+import CheckoutDetails from './components/CheckoutDetails.vue'
+import StepByStep from './components/StepByStep.vue'
+import { computed } from 'vue'
+import { useStore } from 'vuex'
+import { RouterView } from 'vue-router'
+import { useSteps } from './composables/useSteps'
 
-import CheckoutDetails from './components/CheckoutDetails.vue';
-import StepByStep from './components/StepByStep.vue';
-import { computed, onMounted, ref } from 'vue';
-import type { IStep } from './interface/step.interface';
-import StepOne from './components/steps/StepOne.vue';
-import StepTwo from './components/steps/StepTwo.vue'
-import StepThree from './components/steps/StepThree.vue'
-import type { IProduct } from './interface/product.interface';
-import { useStore } from 'vuex';
+const store = useStore()
+const currentStep = computed(() => store.getters.actualStep)
+const products = computed(() => store.getters.allProducts)
+const steps = computed(() => store.getters.allSteps)
 
-const store = useStore();
-const currentStep = ref(1);
-const products = computed(() => store.getters.allProducts);
-const steps = computed(() => store.getters.allSteps);
-
-const updateStep = (step: IStep) => {
-    currentStep.value = step.number;
-}
-
+const { updateStep } = useSteps()
 
 </script>
 
@@ -37,17 +30,7 @@ const updateStep = (step: IStep) => {
 	  <Divider :direction="DividerEnum.VERTICAL"/>
 
 	  <div class="app__step-content">
-
-		<div v-if="currentStep === 1">
-			<StepOne @step-changed="updateStep" />
-		  </div>
-		  <div v-else-if="currentStep === 2">
-			<StepTwo @step-changed="updateStep"/>
-		  </div>
-	
-		  <div v-else-if="currentStep === 3">
-			<StepThree />
-		  </div>
+		<RouterView />
 	  </div>
     </div>
   </div>
@@ -76,7 +59,8 @@ const updateStep = (step: IStep) => {
 		background-color: #f5f5f5;
 		padding: 2rem;
 		width: 50%;
-		border-radius: 0px 8px 8px 0px
+		border-radius: 0px 8px 8px 0px;
+		display: grid;
 	}
 }
 </style>

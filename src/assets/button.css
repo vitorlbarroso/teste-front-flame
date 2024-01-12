@@ -1,5 +1,5 @@
 /* primary */
-button[type="submit"] {
+button[type="submit"], button.primary {
     width: 100%;
     padding: 10px;
     border-radius: 10px;
@@ -8,13 +8,19 @@ button[type="submit"] {
     color: white;
     cursor: pointer;
     font-weight: 600;
+    max-height: 34px;
 }
   
-button[type="submit"]:hover {
+button[type="submit"]:hover, button.primary:hover {
     opacity: .8;
 }
 
-button[type="submit"]:focus-visible {
+button[type="submit"]:disabled, button.primary:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+button[type="submit"]:focus-visible, button.primary:focus-visible {
     outline: 0px;
 }
   

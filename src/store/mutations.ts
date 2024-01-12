@@ -1,6 +1,7 @@
-import type { IProduct } from '@/interface/product.interface';
-import type { State } from '@/interface/state.interface';
-import type { MutationTree } from 'vuex';
+import type { IPaymentMethod } from '@/interface/payment-method.interface'
+import type { IProduct } from '@/interface/product.interface'
+import type { State } from '@/interface/state.interface'
+import type { MutationTree } from 'vuex'
 
 export const mutations: MutationTree<State> = {
     ADD_PRODUCT(state: State, product: IProduct){
@@ -22,6 +23,20 @@ export const mutations: MutationTree<State> = {
             }
 
             return prod;
+        })
+    },
+    SET_STEP(state: State, step: number){
+        state.step = step;
+    },
+    SELECT_PAYMENT_METHOD(state: State, payment: IPaymentMethod){
+        state.paymentsMethod = state.paymentsMethod.map(pay => {
+            pay.isSelected = false;
+            if(pay.value === payment.value){
+
+                return { ...pay, isSelected: true };
+            }
+
+            return pay;
         })
     }
 };
