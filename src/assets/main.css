@@ -4,6 +4,14 @@
 @import './button.css';
 @import './input.css';
 
+p {
+  margin: 0;
+}
+
+h1, h2, h3, h4 {
+  color: #141414;
+}
+
 .main {
   display: flex;
   flex-direction: column;

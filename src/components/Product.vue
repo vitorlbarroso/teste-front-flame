@@ -43,6 +43,11 @@ const valueFormatted = computed(() => formatMoney(props.product.price))
         }
         &__name {
             font-weight: 800;
+            color: #141414;
+        }
+
+        &__description {
+            color: #141414;
         }
 
         &__price {
@@ -57,8 +62,8 @@ const valueFormatted = computed(() => formatMoney(props.product.price))
         <div v-if="props.product.isSelected" class="product__selected animate__animated animate__fadeIn"></div>
         <div class="product__content">
             <div>
-                <div class="product__content__name">{{product.name}}</div>
-                <div class="product__content__description">{{product.description}}</div>
+                <p class="product__content__name">{{product.name}}</p>
+                <p class="product__content__description">{{product.description}}</p>
             </div>
             <span class="product__content__price">{{valueFormatted}}</span>
         </div>

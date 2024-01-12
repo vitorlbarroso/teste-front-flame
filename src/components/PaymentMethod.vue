@@ -9,7 +9,7 @@
         v-model="selectedOption"
       />
       <label :for="payment.value" :class="{ 'payment-method__active': selectedOption === payment.value }">
-        {{ payment.text }}
+        <p>{{ payment.text }}</p>
         <span class="payment-method__circle"></span>
       </label>
     </div>
