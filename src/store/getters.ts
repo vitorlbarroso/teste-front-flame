@@ -10,7 +10,7 @@ export const getters: GetterTree<State, State> = {
     allProductsSelectedSum: (state: State): number => {
         const prices = state.products
             .filter(prod => prod.isSelected)
-            .map(prod => (prod.price));
+            .map(prod => (prod.price))
         
         return prices.reduce((acc, current) => acc + current, 0)
     },
@@ -19,4 +19,4 @@ export const getters: GetterTree<State, State> = {
     allPaymentMethod: (state: State): Array<IPaymentMethod> => state.paymentsMethod,
     paymentMethodSelected: (state: State): IPaymentMethod | undefined => state.paymentsMethod.find(method => method.isSelected),
     userLoggedin: (state: State): IUser => state.userLoggedin
-};
+}

@@ -10,7 +10,7 @@ export function usePayments(){
     const { isValidCPF, isValidCardNumber } = useUtils()
     
     const payments = computed(() => store.getters.allPaymentMethod)
-    const selectedOption = computed(() => store.getters.paymentMethodSelected.value);
+    const selectedOption = computed(() => store.getters.paymentMethodSelected.value)
 
     const formData = reactive({
         name: '',
@@ -18,7 +18,7 @@ export function usePayments(){
         cpf: '',
         validity: '',
         cvv: '',
-    });
+    })
 
     const isFormComplete = computed(() => {
         return !!formData.name &&
@@ -27,11 +27,11 @@ export function usePayments(){
             !!formData.validity && 
             !!formData.cvv &&
             isValidCPF(formData.cpf) &&
-            isValidCardNumber(formData.cardNumber);
-    });
+            isValidCardNumber(formData.cardNumber)
+    })
 
     const selectPaymentMethod = (payment: IPaymentMethod) => {
-        store.dispatch('selectPaymentMethod', payment);
+        store.dispatch('selectPaymentMethod', payment)
     }
     
 

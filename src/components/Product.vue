@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import type { IProduct } from '@/interface/product.interface'
 import { useProducts } from '../composables/useProducts'
-import { useFormatMoney } from '../composables/useFormatMoney';
+import { useFormatMoney } from '../composables/useFormatMoney'
 import { computed } from 'vue'
 
 const props = defineProps<{
   product: IProduct
 }>()
 
-const { selectProduct } = useProducts();
-const { formatMoney } = useFormatMoney();
+const { selectProduct } = useProducts()
+const { formatMoney } = useFormatMoney()
 
-const valueFormatted = computed(() => formatMoney(props.product.price));
+const valueFormatted = computed(() => formatMoney(props.product.price))
 
 
 

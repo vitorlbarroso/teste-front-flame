@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useFormatMoney } from '../composables/useFormatMoney'
+import { useUtils } from '@/composables/useUtils'
 
-const { formatMoney } = useFormatMoney()
+const { formatMoney } = useUtils()
 
 const props = defineProps<{
   label: string,

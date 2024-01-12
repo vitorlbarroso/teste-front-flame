@@ -16,7 +16,7 @@ defineProps<{
   products: Array<IProduct>,
   }>()
   
-const store = useStore();
+const store = useStore()
 const productsSum = computed(() => store.getters.allProductsSelectedSum)
 
 </script>

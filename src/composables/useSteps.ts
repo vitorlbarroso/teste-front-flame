@@ -11,11 +11,11 @@ export function useSteps(){
     const { push } = useRouter()
 	
     const onSubmitStepOne = () => {
-        redirectToNextStep(store.getters.paymentMethodSelected);
+        redirectToNextStep(store.getters.paymentMethodSelected)
     }
 
     const goToSuccess = () => {
-        updateStep({ number: 3 }, false, 'success');
+        updateStep({ number: 3 }, false, 'success')
     }
 
     const redirectToNextStep = (payment: IPaymentMethod) => {

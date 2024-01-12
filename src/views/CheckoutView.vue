@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Card from '../components/Card.vue'
 import Title from '../components/Title.vue'
-import Divider from '../components/Divider.vue';
+import Divider from '../components/Divider.vue'
 import { DividerEnum } from '../enum/divider.enum.ts'
 
 </script>

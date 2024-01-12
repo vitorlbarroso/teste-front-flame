@@ -1,12 +1,12 @@
-import Cleave from 'cleave.js';
+import Cleave from 'cleave.js'
 
 export default {
-  mounted(el, binding) {
-    el.cleave = new Cleave(el, binding.value);
+  mounted(el: any, binding: any) {
+    el.cleave = new Cleave(el, binding.value)
   },
-  beforeUnmount(el) {
+  beforeUnmount(el: any) {
     if (el.cleave) {
-      el.cleave.destroy();
+      el.cleave.destroy()
     }
   }
-};
+}

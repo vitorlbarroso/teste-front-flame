@@ -4,10 +4,10 @@
 import { usePayments } from '@/composables/usePayments'
 import Title from '../components/Title.vue'
 import { Field, ErrorMessage } from 'vee-validate'
-import { useSteps } from '@/composables/useSteps';
+import { useSteps } from '@/composables/useSteps'
 
 const { isFormComplete, formData } = usePayments()
-const { goToSuccess } = useSteps();
+const { goToSuccess } = useSteps()
 
 </script>
 <style scoped lang="scss">

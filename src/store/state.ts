@@ -1,5 +1,5 @@
-import { PaymentMethodEnum } from '@/enum/payment-method.enum';
-import type { State } from '@/interface/state.interface';
+import { PaymentMethodEnum } from '@/enum/payment-method.enum'
+import type { State } from '@/interface/state.interface'
 
 export const state: State = {
     productsSelecteds: 0,
@@ -23,4 +23,4 @@ export const state: State = {
     ],
     paymentMethodSelected: null,
     userLoggedin: { name: 'João Vitor' }
-};
+}

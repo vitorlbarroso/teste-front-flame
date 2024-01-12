@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted } from 'vue';
+import { onMounted, onUnmounted } from 'vue'
 import { useTimer } from '@/composables/useTimer'
 
 const {
@@ -18,11 +18,11 @@ const {
 onMounted(() => {
     updateFormattedTime()
     callInterval()
-  });
+})
   
 onUnmounted(() => {
     cleanInterval()
-});
+})
 </script>
 
 <style scoped lang="scss">

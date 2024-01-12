@@ -1,4 +1,4 @@
 export interface IStep {
-    key?: number;
-    number: number;
+    key?: number
+    number: number
 }

@@ -5,12 +5,12 @@ import type { MutationTree } from 'vuex'
 
 export const mutations: MutationTree<State> = {
     ADD_PRODUCT(state: State, product: IProduct){
-        state.products = [...state.products, product];
+        state.products = [...state.products, product]
     },
     UPDATE_PRODUCT(state: State, product: IProduct){
-        const index = state.products.findIndex(prod => prod.id === product.id);
+        const index = state.products.findIndex(prod => prod.id === product.id)
         if (index !== -1) {
-            state.products.splice(index, 1, product);
+            state.products.splice(index, 1, product)
         }
     },
     DELETE_PRODUCT(state: State, product: IProduct){
@@ -22,21 +22,21 @@ export const mutations: MutationTree<State> = {
                 return { ...prod, isSelected: !prod.isSelected }
             }
 
-            return prod;
+            return prod
         })
     },
     SET_STEP(state: State, step: number){
-        state.step = step;
+        state.step = step
     },
     SELECT_PAYMENT_METHOD(state: State, payment: IPaymentMethod){
         state.paymentsMethod = state.paymentsMethod.map(pay => {
-            pay.isSelected = false;
+            pay.isSelected = false
             if(pay.value === payment.value){
 
-                return { ...pay, isSelected: true };
+                return { ...pay, isSelected: true }
             }
 
-            return pay;
+            return pay
         })
     }
-};
+}
