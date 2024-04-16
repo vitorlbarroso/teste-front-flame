@@ -8,18 +8,25 @@ Precisará criar um sistema de "steps" com as três etapas do checkout: Escolha 
 Processos de cada pagamento:
 - PIX:
   Ao prosseguir com o método de pagamento do pix, deverá ser exibida uma mensagem com um cronômetro de 10 minutos (para a expiração do QR Code) e um QR CODE para leitura e pagamento.
+  Após o tempo se esgotar, gerar um novo código QR Code e resetar o cronômetro.
 
 - Cartão de crédito:
   Após preencher os dados de pagamento, envia o usuário para a página de obrigado, com o nome do comprador sendo exibido.
 
 - Boleto:
   Envia para uma página com o código do boleto.
+  Após clicar em "Já fiz o pagamento, redirecionar para a página de obrigado."
 
-  O que esperamos nesse teste:
+Detalhes importantes:
+  - Após o pagamento ser realizado, não é possível voltar para as etapas 1 e 2.
+  - Os produtos listados na barra lateral serão exibidos a partir de um json mocado.
+  - Se sinta a vontade para criar um Mock Server.
+
+O que esperamos nesse teste:
   Uso do HTML5,
   CSS3,
   Vue.js 3,
-  Boas práticas de desenvolvimento
+  Boas práticas de desenvolvimento,
   Praticidade na entrega.
 
 URL do Figma:
